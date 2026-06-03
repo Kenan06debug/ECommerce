@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MegaMart | Online Shopping Storefront</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- MASTER WORKSPACE CONTROLLER NAVIGATION -->
+    <div class="workspace-nav">
+      <div class="workspace-logo">🎛️ MegaMart Workspace</div>
+      <div class="page-switcher-tabs">
+        <button class="tab-btn active" onclick="switchView('store-page')">
+          1. Storefront
+        </button>
+        <button class="tab-btn" onclick="switchView('detail-page')">
+          2. Product Detail
+        </button>
+        <button class="tab-btn" onclick="switchView('cart-page')">
+          3. My Cart
+        </button>
+        <button class="tab-btn" onclick="switchView('checkout-page')">
+          4. Checkout
+        </button>
+      </div>
+    </div>
+
+    <!-- MEGAMART SHARED TOP UTILITY HEADER -->
+    <header class="megamart-header">
+      <div class="top-utility-bar">
+        <span>Welcome to worldwide MegaMart!</span>
+        <div class="utility-right">
+          <span>📍 Deliver to 423651</span> | <span>🚚 Track your order</span> |
+          <span>🏷️ All Offers</span>
+        </div>
+      </div>
+
+      <nav class="navbar">
+        <div class="nav-left">
+          <button class="menu-hamburger">☰</button>
+          <a href="#" class="logo" onclick="switchView('store-page')"
+            >Mega<span>Mart</span></a
+          >
+        </div>
+
+        <div class="search-container">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search essentials, groceries and more..."
+          />
+          <button class="search-btn">🔍</button>
+        </div>
+
+        <div class="nav-auth-buttons">
+          <button class="btn btn-nav">👤 Sign Up/Sign In</button>
+          <button
+            class="btn btn-nav cart-trigger"
+            onclick="switchView('cart-page')"
+          >
+            🛒 Cart <span class="cart-count-badge">1</span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- CATEGORY NAVIGATION STRIP -->
+      <div class="category-strip">
+        <a href="#" class="cat-pill active">Groceries ▾</a>
+        <a href="#" class="cat-pill">Premium Fruits ▾</a>
+        <a href="#" class="cat-pill">Home & Kitchen ▾</a>
+        <a href="#" class="cat-pill">Fashion ▾</a>
+        <a href="#" class="cat-pill">Electronics ▾</a>
+        <a href="#" class="cat-pill">Beauty ▾</a>
+        <a href="#" class="cat-pill">Home Improvement ▾</a>
+      </div>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- VIEWPORT PAGE 1: MEGAMART HOMEPAGE -->
+    <!-- ========================================== -->
+    <div id="store-page" class="app-page active">
+      <main class="container">
+        <!-- HERO HERO CAROUSEL BANNER -->
+        <div class="mega-hero-banner">
+          <div class="hero-text-content">
+            <p class="hero-sub">Best Deal Online on smart watches</p>
+            <h1 class="hero-main-title">SMART WEARABLE.</h1>
+            <p class="hero-discount">UP TO 80% OFF</p>
+            <div class="carousel-dots">
+              <span class="dot active"></span><span class="dot"></span
+              ><span class="dot"></span>
+            </div>
+          </div>
+          <div class="hero-image-pane">
+            <img
+              src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?auto=format&fit=crop&w=500&q=80"
+              alt="Smart Wearable"
+            />
+          </div>
+        </div>
+
+        <!-- DYNAMIC SMARTPHONE ROW -->
+        <section class="section-container">
+          <div class="section-header-row">
+            <h2>
+              Grab the best deal on
+              <span class="blue-highlight">Smartphones</span>
+            </h2>
+            <a href="#" class="view-all-link">View All ❯</a>
+          </div>
+
+          <div class="product-grid">
+            <!-- Targeted Clickable Product to Detail View -->
+            <div class="product-card" onclick="switchView('detail-page')">
+              <div class="discount-tag">56% OFF</div>
+              <div class="img-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=300&q=80"
+                  alt="Galaxy S22"
+                />
+              </div>
+              <div class="product-info-block">
+                <h3 class="product-title">Galaxy S22 Ultra 5G</h3>
+                <div class="price-row">
+                  <span class="price-now">$749.00</span>
+                  <span class="price-then">$1499.00</span>
+                </div>
+                <p class="savings-tag">Save - $750.00</p>
+              </div>
+            </div>
+
+            <div class="product-card">
+              <div class="discount-tag">40% OFF</div>
+              <div class="img-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=300&q=80"
+                  alt="Phone"
+                />
+              </div>
+              <div class="product-info-block">
+                <h3 class="product-title">Galaxy M13 (4GB | 64GB)</h3>
+                <div class="price-row">
+                  <span class="price-now">$149.00</span>
+                  <span class="price-then">$249.00</span>
+                </div>
+                <p class="savings-tag">Save - $100.00</p>
+              </div>
+            </div>
+
+            <div class="product-card">
+              <div class="discount-tag">30% OFF</div>
+              <div class="img-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=300&q=80"
+                  alt="Phone"
+                />
+              </div>
+              <div class="product-info-block">
+                <h3 class="product-title">Galaxy M33 5G Midnight</h3>
+                <div class="price-row">
+                  <span class="price-now">$269.00</span>
+                  <span class="price-then">$389.00</span>
+                </div>
+                <p class="savings-tag">Save - $120.00</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ROUNDED CIRCLE CATEGORIES SECTION -->
+        <section class="section-container">
+          <div class="section-header-row">
+            <h2>
+              Shop From <span class="blue-highlight">Top Categories</span>
+            </h2>
+            <a href="#" class="view-all-link">View All ❯</a>
+          </div>
+          <div class="circle-categories-strip">
+            <div class="cat-circle-item">
+              <div class="circle-frame">
+                <img
+                  src="https://images.unsplash.com/photo-1565630916779-e303be97b6f5?auto=format&fit=crop&w=150&q=80"
+                />
+              </div>
+              <span>Mobile</span>
+            </div>
+            <div class="cat-circle-item">
+              <div class="circle-frame">
+                <img
+                  src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=150&q=80"
+                />
+              </div>
+              <span>Cosmetics</span>
+            </div>
+            <div class="cat-circle-item">
+              <div class="circle-frame">
+                <img
+                  src="https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=150&q=80"
+                />
+              </div>
+              <span>Electronics</span>
+            </div>
+            <div class="cat-circle-item">
+              <div class="circle-frame">
+                <img
+                  src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=150&q=80"
+                />
+              </div>
+              <span>Furniture</span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- VIEWPORT PAGE 2: PRODUCT DETAIL PAGE -->
+    <!-- ========================================== -->
+    <div id="detail-page" class="app-page">
+      <main class="container">
+        <div class="mega-detail-wrapper">
+          <div class="gallery-card">
+            <div class="display-main-frame">
+              <img
+                src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=500&q=80"
+                id="galleryMain"
+              />
+            </div>
+            <div class="thumbnail-row">
+              <img
+                src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=100&q=80"
+                class="thumb active"
+                onclick="changePreview(this)"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=100&q=80"
+                class="thumb"
+                onclick="changePreview(this)"
+              />
+            </div>
+          </div>
+
+          <div class="meta-card">
+            <span class="badge-blue">In Stock</span>
+            <h1 class="main-product-heading">
+              Galaxy S22 Ultra 5G Smartphone Phantom Black
+            </h1>
+            <div class="rating-strip">⭐️ 4.8 | 124 Customer Reviews</div>
+            <hr class="card-hr" />
+            <div class="pricing-card-block">
+              <span class="current-price">$749.00</span>
+              <span class="old-price">$1499.00</span>
+              <span class="discount-badge-pill">56% OFF</span>
+            </div>
+            <p class="description-blurb">
+              Experience cinematic recording capabilities, extreme fast
+              refreshing processors, and an integrated S-Pen system designed
+              right into the structural mainframe layout matrix.
+            </p>
+            <hr class="card-hr" />
+            <button class="btn btn-blue btn-large" id="addToCartBtn">
+              🛒 Add to Basket
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- VIEWPORT PAGE 3: SHOPPING CART -->
+    <!-- ========================================== -->
+    <div id="cart-page" class="app-page">
+      <main class="container">
+        <h2 class="page-title">Your Cart Summary</h2>
+        <div class="split-layout-cart">
+          <div class="items-panel-card">
+            <div class="cart-row-item">
+              <img
+                src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?auto=format&fit=crop&w=150&q=80"
+                class="cart-thumb"
+              />
+              <div class="cart-details">
+                <h3>Galaxy S22 Ultra 5G</h3>
+                <p class="cart-item-vendor">Seller: MegaMart Official Store</p>
+                <button class="btn-remove" onclick="removeCartItem(this)">
+                  🗑️ Remove Item
+                </button>
+              </div>
+              <div class="cart-pricing-counter">
+                <span class="cart-unit-price">$749.00</span>
+                <div class="counter-control">
+                  <button onclick="adjustQty(this, -1)">-</button>
+                  <span class="qty-display-val">1</span>
+                  <button onclick="adjustQty(this, 1)">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="summary-panel-card">
+            <h3>Order Summary</h3>
+            <div class="summary-item-line">
+              <span>Items Subtotal</span
+              ><strong id="cartSubtotal">$749.00</strong>
+            </div>
+            <div class="summary-item-line">
+              <span>Estimated Shipping</span><span class="free-text">FREE</span>
+            </div>
+            <hr class="card-hr" />
+            <button
+              class="btn btn-blue btn-large"
+              onclick="switchView('checkout-page')"
+            >
+              Proceed to Checkout
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- VIEWPORT PAGE 4: SECURE CHECKOUT -->
+    <!-- ========================================== -->
+    <div id="checkout-page" class="app-page">
+      <main class="container">
+        <div class="split-layout-cart">
+          <div class="items-panel-card">
+            <h3 style="margin-bottom: 20px">Shipping Information</h3>
+            <div class="form-grid-twin">
+              <div class="input-box">
+                <label>First Name</label
+                ><input type="text" placeholder="John" />
+              </div>
+              <div class="input-box">
+                <label>Last Name</label><input type="text" placeholder="Doe" />
+              </div>
+            </div>
+            <div class="input-box" style="margin-top: 15px">
+              <label>Street Address</label
+              ><input
+                type="text"
+                placeholder="Enter delivery location address details"
+              />
+            </div>
+          </div>
+          <div class="summary-panel-card">
+            <h3>Final Review</h3>
+            <div class="summary-item-line">
+              <span>Total Due:</span><strong>$749.00</strong>
+            </div>
+            <hr class="card-hr" />
+            <button
+              class="btn btn-blue btn-large"
+              onclick="processFinalOrder()"
+            >
+              Confirm Order Placement
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- FOOTER DESIGN MATRICES MATCHING ORIGINAL ARCHITECTURE -->
+    <footer class="megamart-footer">
+      <div class="footer-inner">
+        <div class="footer-column">
+          <h3>MegaMart</h3>
+          <p>Contact Us via WhatsApp or Call Support</p>
+          <p class="phone-num">📲 +1 800-555-0199</p>
+        </div>
+        <div class="footer-column">
+          <h4>Most Popular Categories</h4>
+          <ul>
+            <li>Staples</li>
+            <li>Beverages</li>
+            <li>Personal Care</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Customer Services</h4>
+          <ul>
+            <li>About Us</li>
+            <li>Terms & Conditions</li>
+            <li>Privacy Policy</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 All rights reserved. Reliance Retail Ltd.
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
