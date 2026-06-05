@@ -38,14 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
         valueHolder.textContent = currentQty;
         
         // Compute Cost Changes
-        const rawTotal = (749.00 * currentQty).toFixed(2);
-        document.getElementById('cartSubtotal').textContent = `$${rawTotal}`;
+        const rawTotal = (#749,000 * currentQty).toFixed(2);
+        document.getElementById('cartSubtotal').textContent = `##{rawTotal}`;
     };
 
     window.removeCartItem = function(btn) {
         if(confirm("Remove this item from your basket?")) {
             btn.closest('.cart-row-item').innerHTML = `<p style="padding:20px;color:#888;">Your cart is empty.</p>`;
-            document.getElementById('cartSubtotal').textContent = `$0.00`;
+            document.getElementById('cartSubtotal').textContent = `#0.00`;
             document.querySelector('.cart-count-badge').textContent = '0';
         }
     };
