@@ -1,22 +1,39 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Tab Switcher Logic Router ---
+    // --- Master Tab Switcher Engine ---
     window.switchView = function(targetPageId) {
-        // Toggle view blocks
+        // 1. Hide all pages, show the target page
         document.querySelectorAll('.app-page').forEach(page => {
             page.classList.remove('active');
         });
-        document.getElementById(targetPageId).classList.add('active');
+        const targetPage = document.getElementById(targetPageId);
+        if (targetPage) {
+            targetPage.classList.add('active');
+        }
 
-        // Synchronize Active Switcher Buttons
+        // 2. Synchronize Top Workspace Active Tabs
         document.querySelectorAll('.tab-btn').forEach(btn => {
             btn.classList.remove('active');
-            if (btn.getAttribute('onclick').includes(targetPageId)) {
+            // Check if the button's data attribute matches the target page
+            if (btn.getAttribute('data-target') === targetPageId) {
                 btn.classList.add('active');
             }
         });
+
+        // 3. Smooth scroll back to top of layout view
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
+
+    // --- Explicit Event Binding for Workspace Buttons ---
+    // This intercepts clicks directly via JavaScript to guarantee reactivity
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const target = btn.getAttribute('data-target');
+            if (target) {
+                switchView(target);
+            }
+        });
+    });
 
     // --- Detail Gallery Controller ---
     window.changePreview = function(element) {
@@ -37,8 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         valueHolder.textContent = currentQty;
         
-        // Compute Cost Changes using Naira (Base price: 749,000)
-        // Using LocaleString to add standard Nigerian currency comma separations (e.g., 1,498,000)
         const basePrice = 749000;
         const totalCost = basePrice * currentQty;
         const formattedTotal = totalCost.toLocaleString('en-NG');
@@ -55,10 +70,13 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // --- Call to Action Triggers ---
-    document.getElementById('addToCartBtn').addEventListener('click', () => {
-        alert('🛒 Successfully added to your Kenan Cart basket!');
-        switchView('cart-page');
-    });
+    const addToCartBtn = document.getElementById('addToCartBtn');
+    if (addToCartBtn) {
+        addToCartBtn.addEventListener('click', () => {
+            alert('🛒 Successfully added to your Kenan Cart basket!');
+            switchView('cart-page');
+        });
+    }
 
     window.processFinalOrder = function() {
         alert('🎉 Success! Your Kenan dispatch tracking details are being processed.');
