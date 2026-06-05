@@ -1,4 +1,4 @@
-/* --- MegaMart Design System Architecture --- */
+/* --- Kenan Design System Architecture --- */
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #f5f7fa; /* Clean light grey background */
+    background-color: #f5f7fa;
     color: #222222;
 }
 
@@ -46,7 +46,7 @@ body {
 .app-page { display: none; }
 .app-page.active { display: block; }
 
-/* --- MegaMart Header & Utility Elements --- */
+/* --- Header & Utility Elements --- */
 .top-utility-bar {
     background-color: #f5f7fa;
     color: #666;
@@ -74,7 +74,6 @@ body {
 .logo {
     font-size: 24px; font-weight: 800; color: #008ecc;
 }
-.logo span { color: #494949; }
 
 .search-container {
     display: flex; flex: 0 1 550px;
@@ -110,8 +109,8 @@ body {
 /* --- Container Core Framing --- */
 .container { max-width: 1200px; margin: 25px auto; padding: 0 15px; }
 
-/* --- MegaMart Hero Showcase --- */
-.mega-hero-banner {
+/* --- Hero Showcase --- */
+.kenan-hero-banner {
     background: #212529; color: white; border-radius: 16px; padding: 40px;
     display: flex; justify-content: space-between; align-items: center; position: relative; overflow: hidden;
 }
@@ -163,8 +162,8 @@ body {
 .circle-frame img { width: 100%; height: 100%; object-fit: cover; }
 .cat-circle-item span { font-size: 13px; font-weight: 500; color: #494949; }
 
-/* --- Mega Product Details View --- */
-.mega-detail-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+/* --- Product Details View --- */
+.kenan-detail-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
 .gallery-card, .meta-card { background: white; border-radius: 16px; padding: 25px; border: 1px solid #e3e8ee; }
 .display-main-frame { height: 300px; display: flex; align-items: center; justify-content: center; }
 .display-main-frame img { max-height: 100%; object-fit: contain; }
@@ -205,8 +204,8 @@ body {
 .input-box input { width: 100%; padding: 12px; border: 1px solid #ccdfec; border-radius: 8px; outline: none; }
 .input-box input:focus { border-color: #008ecc; }
 
-/* --- Global MegaMart Footer Matrix --- */
-.megamart-footer { background: #008ecc; color: white; margin-top: 80px; padding: 40px 5% 20px 5%; }
+/* --- Global Footer Matrix --- */
+.kenan-footer { background: #008ecc; color: white; margin-top: 80px; padding: 40px 5% 20px 5%; }
 .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
 .footer-column h3, .footer-column h4 { font-size: 18px; margin-bottom: 15px; }
 .footer-column p { font-size: 14px; opacity: 0.9; line-height: 1.6; }
@@ -216,159 +215,39 @@ body {
 .footer-column ul li:hover { opacity: 1; text-decoration: underline; }
 .footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.2); margin-top: 30px; padding-top: 20px; font-size: 12px; opacity: 0.7; }
 
-/* Responsive Adaptability */
-/* @media (max-width: 768px) {
-    .mega-detail-wrapper, .split-layout-cart, .footer-inner { grid-template-columns: 1fr; }
-    .mega-hero-banner { flex-direction: column-reverse; gap: 20px; text-align: center; } */
-}
 /* ==========================================================================
-   MEDIA VIEWS: TABLET PORTRAIT & SMALL DESKTOPS (Max-Width: 1024px)
+   MEDIA VIEWS: RESPONSIVE MEDIA QUERIES BREAKPOINTS
    ========================================================================== */
 @media screen and (max-width: 1024px) {
-    .container {
-        max-width: 95%;
-        margin: 20px auto;
-    }
-
-    /* Adjust the main product detail grid down to an equal split */
-    .mega-detail-wrapper {
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-    }
-
-    /* Compress the split cart layout slightly */
-    .split-layout-cart {
-        grid-template-columns: 2fr 1fr;
-        gap: 15px;
-    }
-
-    /* Scaled text properties for Hero section */
-    .hero-main-title {
-        font-size: 32px;
-    }
+    .container { max-width: 95%; margin: 20px auto; }
+    .kenan-detail-wrapper { grid-template-columns: 1fr 1fr; gap: 20px; }
+    .split-layout-cart { grid-template-columns: 2fr 1fr; gap: 15px; }
+    .hero-main-title { font-size: 32px; }
 }
 
-/* ==========================================================================
-   MEDIA VIEWS: SMALL TABLETS & LARGE PHONES (Max-Width: 768px)
-   ========================================================================== */
 @media screen and (max-width: 768px) {
-    /* Stack the split layout screens cleanly into a single vertical column */
-    .mega-detail-wrapper, 
-    .split-layout-cart, 
-    .footer-inner {
-        grid-template-columns: 1fr;
-    }
-
-    /* Invert directions so text controls lay underneath the hero product image */
-    .mega-hero-banner {
-        flex-direction: column-reverse;
-        gap: 24px;
-        text-align: center;
-        padding: 30px 20px;
-    }
-
-    .hero-image-pane img {
-        height: 180px;
-    }
-
-    .carousel-dots {
-        justify-content: center;
-    }
-
-    /* Adapt grid cards to fit two items across screen row layouts safely */
-    .product-grid {
-        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-        gap: 12px;
-    }
-
-    /* Wrap the footer columns to center alignment models */
-    .footer-column {
-        text-align: center;
-    }
-    
-    .workspace-nav {
-        flex-direction: column;
-        gap: 10px;
-    }
+    .kenan-detail-wrapper, .split-layout-cart, .footer-inner { grid-template-columns: 1fr; }
+    .kenan-hero-banner { flex-direction: column-reverse; gap: 24px; text-align: center; padding: 30px 20px; }
+    .hero-image-pane img { height: 180px; }
+    .carousel-dots { justify-content: center; }
+    .product-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+    .footer-column { text-align: center; }
+    .workspace-nav { flex-direction: column; gap: 10px; }
 }
 
-/* ==========================================================================
-   MEDIA VIEWS: MOBILE SMARTPHONES (Max-Width: 480px)
-   ========================================================================== */
 @media screen and (max-width: 480px) {
-    /* Compress utility header configurations */
-    .top-utility-bar {
-        display: none; /* Hide top utility strip to optimize dynamic viewport real estate */
-    }
-
-    .navbar {
-        flex-wrap: wrap;
-        padding: 12px 15px;
-        gap: 12px;
-    }
-
-    /* Push search container engine bar down to its own clean, full-width row line */
-    .search-container {
-        order: 3;
-        flex: 0 1 100%;
-    }
-
-    .logo {
-        font-size: 20px;
-    }
-
-    /* Simplify the interactive navigation action pill strips */
-    .category-strip {
-        padding: 8px 15px;
-        gap: 8px;
-    }
-
-    .cat-pill {
-        font-size: 12px;
-        padding: 4px 10px;
-    }
-
-    /* Scale hero headline tracking formats */
-    .hero-main-title {
-        font-size: 24px;
-    }
-
-    /* Dynamic adjustments inside product cards to maximize screen space */
-    .product-card {
-        padding: 12px;
-        border-radius: 12px;
-    }
-
-    .img-wrapper {
-        height: 130px;
-    }
-
-    .product-title {
-        font-size: 13px;
-    }
-
-    .price-now {
-        font-size: 14px;
-    }
-
-    /* Make cart list rows stack on narrow phones */
-    .cart-row-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-        text-align: left;
-    }
-
-    .cart-pricing-counter {
-        text-align: left;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    /* Clean double columns for target split checkout layouts */
-    .form-grid-twin {
-        grid-template-columns: 1fr;
-    }
+    .top-utility-bar { display: none; }
+    .navbar { flex-wrap: wrap; padding: 12px 15px; gap: 12px; }
+    .search-container { order: 3; flex: 0 1 100%; }
+    .logo { font-size: 20px; }
+    .category-strip { padding: 8px 15px; gap: 8px; }
+    .cat-pill { font-size: 12px; padding: 4px 10px; }
+    .hero-main-title { font-size: 24px; }
+    .product-card { padding: 12px; border-radius: 12px; }
+    .img-wrapper { height: 130px; }
+    .product-title { font-size: 13px; }
+    .price-now { font-size: 14px; }
+    .cart-row-item { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .cart-pricing-counter { text-align: left; width: 100%; display: flex; justify-content: space-between; align-items: center; }
+    .form-grid-twin { grid-template-columns: 1fr; }
 }
