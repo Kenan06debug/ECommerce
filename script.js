@@ -52,12 +52,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Call to Action Triggers ---
     document.getElementById('addToCartBtn').addEventListener('click', () => {
-        alert('🛒 Successfully added to your MegaMart Cart basket!');
+        alert('🛒 Successfully added to your KENAN Cart basket!');
         switchView('cart-page');
     });
 
     window.processFinalOrder = function() {
-        alert('🎉 Success! Your MegaMart dispatch tracking details are being processed.');
+        alert('🎉 Success! Your KENAN dispatch tracking details are being processed.');
         switchView('store-page');
     };
 });
